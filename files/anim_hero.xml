@@ -1,0 +1,79 @@
+<!DOCTYPE SpriteDecomposer>
+<sprites image="hero.png" transparentColor="">
+ <animation title="jump" delay="180">
+  <cut w="91" x="2" y="1395" h="102" row="1" col="1"/>
+  <cut w="83" x="108" y="1412" h="85" row="1" col="1"/>
+  <cut w="72" x="213" y="1419" h="78" row="1" col="1"/>
+  <cut w="78" x="310" y="1410" h="87" row="1" col="1"/>
+  <cut w="94" x="403" y="1408" h="89" row="1" col="1"/>
+  <cut w="89" x="505" y="1407" h="90" row="1" col="1"/>
+  <cut w="87" x="606" y="1406" h="91" row="1" col="1"/>
+ </animation>
+  <animation title="ends_of_the_earth" delay="160">
+  <cut w="122" x="1" y="1049" h="94" row="1" col="1"/>
+  <cut w="115" x="133" y="1048" h="95" row="1" col="1"/>
+  <cut w="99" x="263" y="1049" h="94" row="1" col="1"/>
+  <cut w="106" x="385" y="1047" h="96" row="1" col="1"/>
+  <cut w="103" x="506" y="1045" h="98" row="1" col="1"/>
+  <cut w="111" x="634" y="1041" h="102" row="1" col="1"/>
+  <cut w="95" x="764" y="1044" h="99" row="1" col="1"/>
+  <cut w="122" x="877" y="1048" h="95" row="1" col="1"/>
+ </animation>
+ <animation title="stay" delay="150">
+  <cut w="66" x="2" y="115" h="116" row="1" col="1"/>
+  <cut w="66" x="73" y="117" h="115" row="1" col="1"/>
+  <cut w="66" x="155" y="119" h="113" row="1" col="1"/>
+  <cut w="67" x="235" y="117" h="115" row="1" col="1"/>
+  <cut w="69" x="312" y="117.5" h="115" row="1" col="1"/>
+  <cut w="72" x="392" y="115" h="116" row="1" col="1"/>
+  <cut w="74" x="473" y="115" h="116" row="1" col="1"/>
+  <cut w="71" x="553" y="116" h="115" row="1" col="1"/>
+ </animation>
+ <animation title="run" delay="200">
+  <cut w="83" x="5" y="3" h="106" row="1" col="1"/>
+  <cut w="93" x="116" y="10" h="99" row="1" col="1"/>
+  <cut w="91" x="226" y="7" h="102" row="1" col="1"/>
+  <cut w="104" x="332" y="13" h="95" row="1" col="1"/>
+  <cut w="96" x="447" y="1" h="108" row="1" col="1"/>
+  <cut w="83" x="559" y="5" h="104" row="1" col="1"/>
+  <cut w="89" x="668" y="12" h="98" row="1" col="1"/>
+  <cut w="91" x="779" y="10" h="99" row="1" col="1"/>
+  <cut w="105" x="882" y="8" h="101" row="1" col="1"/>
+  <cut w="95" x="998" y="2" h="107" row="1" col="1"/>
+ </animation>
+ <animation title="climb" delay="160">
+  <cut w="68" x="3" y="2009" h="105" row="1" col="1"/>
+  <cut w="63" x="81" y="1991" h="123" row="1" col="1"/>
+  <cut w="64" x="158" y="1981" h="133" row="1" col="1"/>
+  <cut w="68" x="231" y="1985" h="129" row="1" col="1"/>
+  <cut w="68" x="304" y="1984" h="130" row="1" col="1"/>
+  <cut w="71" x="378" y="1994" h="120" row="1" col="1"/>
+  <cut w="68" x="455" y="2009" h="105" row="1" col="1"/>
+  <cut w="63" x="530" y="1991" h="123" row="1" col="1"/>
+  <cut w="64" x="606" y="1981" h="133" row="1" col="1"/>
+  <cut w="68" x="677" y="1985" h="129" row="1" col="1"/>
+  <cut w="68" x="752" y="1984" h="130" row="1" col="1"/>
+  <cut w="72" x="826" y="1994" h="120" row="1" col="1"/>
+ </animation>
+ <animation title="shootAndrun" delay="100">
+  <cut w="113" x="761" y="2634" h="70" row="1" col="1"/>
+  <cut w="99" x="884" y="2658" h="44" row="1" col="1"/>
+ </animation>
+ <animation title="sit_down" delay="100">
+  <cut w="80" x="335" y="763" h="70" row="1" col="1"/>
+ </animation>
+ <animation title="hit_sword" delay="200">
+  <cut w="65" x="36" y="242" h="110" row="1" col="1"/>
+  <cut w="72" x="189" y="247" h="104" row="1" col="1"/>
+  <cut w="100" x="346" y="258" h="93" row="1" col="1"/>
+  <cut w="160" x="470" y="266" h="85" row="1" col="1"/>
+ </animation>
+  <animation title="climb_pull_up" delay="150">
+  <cut w="71" x="2" y="2122.25" h="110" row="1" col="1"/>
+  <cut w="58" x="85" y="2128" h="105" row="1" col="1"/>
+  <cut w="56" x="161" y="2129" h="104" row="1" col="1"/>
+  <cut w="55" x="233" y="2149" h="84" row="1" col="1"/>
+  <cut w="55" x="310" y="2147" h="86" row="1" col="1"/>
+  <cut w="56" x="386" y="2132" h="101" row="1" col="1"/>
+ </animation>
+</sprites>
