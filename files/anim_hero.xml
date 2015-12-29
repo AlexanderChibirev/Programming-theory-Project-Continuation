@@ -55,7 +55,7 @@
   <cut w="68" x="752" y="1984" h="130" row="1" col="1"/>
   <cut w="72" x="826" y="1994" h="120" row="1" col="1"/>
  </animation>
- <animation title="shootAndrun" delay="100">
+ <animation title="dead_spike" delay="700">
   <cut w="113" x="761" y="2634" h="70" row="1" col="1"/>
   <cut w="99" x="884" y="2658" h="44" row="1" col="1"/>
  </animation>
@@ -63,10 +63,30 @@
   <cut w="80" x="335" y="763" h="70" row="1" col="1"/>
  </animation>
  <animation title="hit_sword" delay="200">
-  <cut w="65" x="36" y="242" h="110" row="1" col="1"/>
-  <cut w="72" x="189" y="247" h="104" row="1" col="1"/>
-  <cut w="100" x="346" y="258" h="93" row="1" col="1"/>
-  <cut w="160" x="470" y="266" h="85" row="1" col="1"/>
+  <cut w="66" x="35" y="236" h="116" row="1" col="1"/>
+  <cut w="72" x="189" y="235" h="116" row="1" col="1"/>
+  <cut w="100" x="346" y="235" h="116" row="1" col="1"/>
+  <cut w="160" x="470" y="235" h="116" row="1" col="1"/>
+ </animation>
+ <animation title="hit_sword_down" delay="150">
+  <cut w="145" x="335" y="763" h="70" row="1" col="1"/>
+ </animation>
+  <animation title="fall" delay="150">
+  <cut w="87" x="2" y="1505" h="103" row="1" col="1"/>
+  <cut w="81" x="95" y="1504" h="104" row="1" col="1"/>
+  <cut w="87" x="181" y="1504" h="104" row="1" col="1"/>
+  <cut w="82" x="275" y="1503" h="105" row="1" col="1"/>
+  <cut w="82" x="364" y="1503" h="105" row="1" col="1"/>
+ </animation>
+  <animation title="fist_fight" delay="350">
+  <cut w="68" x="11" y="491.25" h="116" row="1" col="1"/>
+  <cut w="67" x="118" y="491" h="116" row="1" col="1"/>
+  <cut w="97" x="219" y="491" h="116" row="1" col="1"/>
+  <cut w="77" x="337" y="491" h="116" row="1" col="1"/>
+  <cut w="87" x="439" y="491" h="116" row="1" col="1"/>
+  <cut w="92" x="548" y="491" h="116" row="1" col="1"/>
+  <cut w="98" x="657" y="489.25" h="118" row="1" col="1"/>
+  <cut w="74" x="773" y="491" h="116" row="1" col="1"/>
  </animation>
   <animation title="climb_pull_up" delay="150">
   <cut w="71" x="2" y="2122.25" h="110" row="1" col="1"/>

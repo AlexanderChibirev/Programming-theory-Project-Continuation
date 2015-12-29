@@ -106,6 +106,8 @@ public:
 				anim.frames_flip.push_back( IntRect(x+w,y,-w,h)  );
 				cut = cut->NextSiblingElement("cut");
 			}
+			//если изображение сидеть зеркальное, то мы ставим на х = *anim.frames[0].width*, для нормального
+			//если просто, то х = *0*
 			anim.sprite.setOrigin(0,anim.frames[0].height);
 
 			animList[currentAnim] = anim;
@@ -119,7 +121,7 @@ public:
 		animList[currentAnim].flip=0;
 	}
 
-	void draw(RenderWindow &window,int x=0, int y=0)
+	void draw(RenderWindow &window,int x=0, int y=0)// смещаем координаты
 	{
 		animList[currentAnim].sprite.setPosition(x,y);
 		window.draw( animList[currentAnim].sprite );

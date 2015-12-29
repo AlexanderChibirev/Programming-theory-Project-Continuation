@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="90" tilewidth="32" tileheight="32" nextobjectid="193">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="90" tilewidth="32" tileheight="32" nextobjectid="211">
  <tileset firstgid="1" name="Level1-Tiles1New" tilewidth="32" tileheight="32" tilecount="660">
   <image source="images/Level1-Tiles1New.png" width="715" height="974"/>
  </tileset>
  <objectgroup name="collision">
-  <object id="24" name="solid" x="280" y="2276" width="171" height="24"/>
+  <object id="24" name="solid" x="280" y="2276" width="144.667" height="24"/>
   <object id="34" name="solid" x="256.5" y="1626" width="29.5" height="670"/>
-  <object id="63" x="1276" y="2280" width="6.66667" height="4"/>
   <object id="66" name="easyEnemy" x="2088" y="2042" width="137" height="179"/>
-  <object id="67" name="solid" x="1783" y="2145.33" width="142.5" height="79.3333"/>
+  <object id="67" name="solid" x="1783" y="2145.33" width="158.333" height="79.3333"/>
   <object id="68" name="solid" x="2567.33" y="2148" width="176.667" height="85"/>
   <object id="69" name="solid" x="2158.67" y="1835.33" width="404.003" height="12"/>
   <object id="76" name="movingPlatformY" x="1529.16" y="2128.33" width="92" height="30"/>
-  <object id="84" name="player" x="1745.33" y="2021.5" width="68" height="120"/>
+  <object id="84" name="player" x="658.5" y="2150.5" width="68" height="120"/>
   <object id="85" name="solid" x="577" y="2275" width="482" height="24"/>
   <object id="90" name="solid" x="575" y="1921" width="488.333" height="24"/>
   <object id="91" name="solid" x="576" y="2020" width="487" height="24"/>
@@ -21,22 +20,8 @@
   <object id="100" name="destroyPlatform" x="478.667" y="1858.67" width="33.3333" height="30.6667"/>
   <object id="117" name="solid" x="304.667" y="1507.33" width="26" height="123.333"/>
   <object id="124" name="solid" x="-16.5" y="1502" width="348" height="32.1665"/>
-  <object id="138" name="coin" x="149" y="1304" width="30" height="32"/>
-  <object id="139" name="coin" x="100" y="1342" width="30" height="32"/>
-  <object id="140" name="coin" x="145" y="1342" width="30" height="32"/>
-  <object id="141" name="coin" x="191" y="1342" width="30" height="32"/>
-  <object id="142" name="coin" x="100" y="1385" width="30" height="32"/>
-  <object id="144" name="coin" x="104.5" y="1423.5" width="30" height="32"/>
-  <object id="145" name="coin" x="149.5" y="1423.5" width="30" height="32"/>
-  <object id="146" name="coin" x="195.5" y="1423.5" width="30" height="32"/>
-  <object id="147" name="coin" x="149.5" y="1383.5" width="30" height="32"/>
-  <object id="148" name="coin" x="194" y="1385" width="30" height="32"/>
-  <object id="149" name="coin" x="195.5" y="1465" width="30" height="32"/>
-  <object id="150" name="coin" x="149.5" y="1465" width="30" height="32"/>
-  <object id="151" name="coin" x="104.5" y="1465" width="30" height="32"/>
-  <object id="153" name="coin" x="648.5" y="2231" width="30" height="32"/>
   <object id="154" name="coin" x="603.5" y="2231" width="30" height="32"/>
-  <object id="155" name="solid" x="1249" y="2236" width="541" height="24"/>
+  <object id="155" name="solid" x="1152.67" y="2236" width="637.333" height="24"/>
   <object id="156" name="solid" x="1793" y="2236" width="1210" height="24"/>
   <object id="161" name="spikes" x="1063.67" y="2395.67" width="166.333" height="58.3333"/>
   <object id="167" name="solid" x="908.167" y="2398.67" width="541" height="24"/>
@@ -44,6 +29,17 @@
   <object id="181" name="ladder" x="1852" y="1598" width="39" height="438"/>
   <object id="190" name="ends_of_the_earth_r" x="1983.3" y="2017.5" width="16.6957" height="20.4565"/>
   <object id="192" name="ends_of_the_earth_l" x="1725.65" y="2016.77" width="16.6957" height="20.4565"/>
+  <object id="193" name="torch" x="733.333" y="2136.67" width="56" height="128"/>
+  <object id="196" name="torch" x="817" y="2137" width="56" height="128"/>
+  <object id="197" name="torch" x="953.333" y="2136.67" width="56" height="128"/>
+  <object id="198" name="torch" x="358.667" y="2136.33" width="56" height="128"/>
+  <object id="199" name="torch_window" x="199.333" y="1955.33" width="16" height="40"/>
+  <object id="200" name="torch_window" x="200.333" y="2083.67" width="16" height="40"/>
+  <object id="201" name="ends_of_the_earth_r" x="482.319" y="2141.11" width="16.6957" height="20.4565"/>
+  <object id="202" name="spikes" x="435.5" y="2390.17" width="134" height="58.3333"/>
+  <object id="206" name="chain" x="596.5" y="1992.5" width="24" height="72"/>
+  <object id="208" name="chain" x="641" y="1992.5" width="24" height="72"/>
+  <object id="209" name="dungeon" x="595" y="2176.5" width="113" height="72"/>
  </objectgroup>
  <layer name="фон" width="100" height="90" visible="0">
   <data>

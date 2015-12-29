@@ -1,0 +1,51 @@
+<!DOCTYPE SpriteDecomposer>
+<sprites image="Enemies-OfficerF.png" transparentColor="">
+ <animation title="stay" delay="100">
+  <cut w="64" x="0" y="131" h="128" row="1" col="1"/>
+  <cut w="61" x="68" y="131" h="128" row="1" col="1"/>
+  <cut w="60" x="133" y="131" h="128" row="1" col="1"/>
+  <cut w="61" x="198" y="131" h="128" row="1" col="1"/>
+  <cut w="64" x="260" y="131" h="128" row="1" col="1"/>
+  <cut w="61" x="198" y="131" h="128" row="1" col="1"/>
+  <cut w="61" x="132" y="131" h="128" row="1" col="1"/>
+  <cut w="61" x="67" y="131" h="128" row="1" col="1"/>
+ </animation>
+ <animation title="run" delay="100">
+  <cut w="97" x="0" y="11" h="112" row="1" col="1"/>
+  <cut w="90" x="106" y="10" h="113" row="1" col="1"/>
+  <cut w="80" x="214" y="7" h="117" row="1" col="1"/>
+  <cut w="78" x="314" y="12" h="111" row="1" col="1"/>
+  <cut w="81" x="415" y="4" h="119" row="1" col="1"/>
+  <cut w="79" x="513" y="3" h="120" row="1" col="1"/>
+  <cut w="84" x="609" y="0" h="123" row="1" col="1"/>
+  <cut w="90" x="706" y="6" h="116" row="1" col="1"/>
+  <cut w="73" x="818" y="1" h="121" row="1" col="1"/>
+  <cut w="65" x="922" y="1" h="122" row="1" col="1"/>
+  <cut w="74" x="1020" y="0" h="122" row="1" col="1"/>
+  <cut w="65" x="923" y="1" h="122" row="1" col="1"/>
+  <cut w="72" x="819" y="1" h="121" row="1" col="1"/>
+  <cut w="89" x="707" y="7" h="116" row="1" col="1"/>
+ </animation>
+ <animation title="attack_straight" delay="100">
+  <cut w="79" x="46" y="267" h="123" row="1" col="1"/>
+  <cut w="82" x="210" y="268" h="122" row="1" col="1"/>
+  <cut w="90" x="369" y="275" h="115" row="1" col="1"/>
+  <cut w="112" x="521" y="282" h="108" row="1" col="1"/>
+  <cut w="163" x="661" y="287" h="103" row="1" col="1"/>
+ </animation>
+ <animation title="dead_by_the_sword" delay="100">
+  <cut w="81" x="16" y="716" h="109" row="1" col="1"/>
+  <cut w="81" x="140" y="719" h="106" row="1" col="1"/>
+  <cut w="94" x="251" y="731" h="94" row="1" col="1"/>
+  <cut w="101" x="368" y="734" h="91" row="1" col="1"/>
+  <cut w="106" x="487" y="720" h="105" row="1" col="1"/>
+  <cut w="104" x="607" y="720" h="105" row="1" col="1"/>
+  <cut w="97" x="733" y="752" h="73" row="1" col="1"/>
+ </animation>
+ <animation title="dead_by_the_fight" delay="100">
+  <cut w="101" x="7" y="883" h="132" row="1" col="1"/>
+  <cut w="63" x="143" y="904" h="111" row="1" col="1"/>
+  <cut w="87" x="141" y="1030" h="107" row="1" col="1"/>
+  <cut w="79" x="3" y="1025" h="127" row="1" col="1"/>
+ </animation>
+</sprites>
