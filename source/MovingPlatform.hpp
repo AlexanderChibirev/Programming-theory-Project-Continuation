@@ -1,7 +1,7 @@
 class MovingPlatform: public Entity
 {
 public:
-	MovingPlatform(AnimationManager &a, Level &lev,int x,int y,String Name):Entity(a,x,y)
+	MovingPlatform(AnimationManager &a, Level &lev,float x,float y,String Name):Entity(a,x,y)
 	{
 		option(Name, 0.05, 0, "move");
 	}

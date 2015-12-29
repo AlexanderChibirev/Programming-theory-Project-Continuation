@@ -41,7 +41,7 @@
   <object id="208" name="chain" x="641" y="1992.5" width="24" height="72"/>
   <object id="209" name="dungeon" x="595" y="2176.5" width="113" height="72"/>
  </objectgroup>
- <layer name="фон" width="100" height="90" visible="0">
+ <layer name="фон" width="100" height="90">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -9045,7 +9045,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="стены2" width="100" height="90" visible="0">
+ <layer name="стены2" width="100" height="90">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -18049,7 +18049,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="задний фон для шипов" width="100" height="90" visible="0">
+ <layer name="задний фон для шипов" width="100" height="90">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -27053,7 +27053,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="простые стены" width="100" height="90" visible="0">
+ <layer name="простые стены" width="100" height="90">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -36057,7 +36057,7 @@
    <tile gid="51"/>
   </data>
  </layer>
- <layer name="шипы" width="100" height="90" visible="0">
+ <layer name="шипы" width="100" height="90">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -45061,7 +45061,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="синие стены" width="100" height="90" visible="0">
+ <layer name="синие стены" width="100" height="90">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -52171,9 +52171,9 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="50"/>
+   <tile gid="50"/>
+   <tile gid="51"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -52271,6 +52271,10 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="50"/>
+   <tile gid="51"/>
+   <tile gid="50"/>
+   <tile gid="51"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -52367,14 +52371,10 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="50"/>
+   <tile gid="50"/>
+   <tile gid="50"/>
+   <tile gid="51"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -54065,7 +54065,7 @@
    <tile gid="334"/>
   </data>
  </layer>
- <layer name="столбы" width="100" height="90" visible="0">
+ <layer name="столбы" width="100" height="90">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -63069,7 +63069,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="дверь" width="100" height="90" visible="0">
+ <layer name="дверь" width="100" height="90">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -72073,7 +72073,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="окна" width="100" height="90" visible="0">
+ <layer name="окна" width="100" height="90">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -81077,7 +81077,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="тумбочки" width="100" height="90" visible="0">
+ <layer name="тумбочки" width="100" height="90">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -90081,7 +90081,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="вверх столбов" width="100" height="90" visible="0">
+ <layer name="вверх столбов" width="100" height="90">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -99085,7 +99085,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="висящие платформы" width="100" height="90" visible="0">
+ <layer name="висящие платформы" width="100" height="90">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -108089,7 +108089,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="лестница" width="100" height="90" visible="0">
+ <layer name="лестница" width="100" height="90">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>

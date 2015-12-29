@@ -8,7 +8,7 @@ class ENEMY: public Entity
 {
 public:
 
-	ENEMY(AnimationManager &a,Level &lev,int x,int y):Entity(a,x,y)
+	ENEMY(AnimationManager &a,Level &lev,float x,float y):Entity(a,x,y)
 	{
 		option("Enemy", 0.01, 15, "move");
 	}

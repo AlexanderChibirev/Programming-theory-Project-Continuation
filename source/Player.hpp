@@ -14,9 +14,9 @@ public:
 	bool onLadder, shoot,YY;
 	std::map<std::string, bool> key;
 
-	PLAYER(AnimationManager &a, Level &lev, int x, int y) :Entity(a, x, y)
+	PLAYER(AnimationManager &a, Level &lev, float x, float y) :Entity(a, x, y)
 	{
-		option("Player", 10, 100, "stay"); //имя, = ,жизни, состояние
+		option("Player", float(1), 100, "stay"); //имя, = ,жизни, состояние
 		STATE = stay;
 		obj = lev.GetAllObjects();
 	}

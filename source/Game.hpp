@@ -96,7 +96,7 @@ void RunGame()
 	text.setStyle(sf::Text::Bold | sf::Text::Underlined);
 
 	Object pl = lvl.GetObject("player");
-	PLAYER Claw(hero_anim, lvl, pl.rect.left, pl.rect.top);
+	PLAYER Claw(hero_anim, lvl, float(pl.rect.left), float(pl.rect.top));
 	Clock clock;
 	//Clock cloker;
 
@@ -175,7 +175,7 @@ void RunGame()
 		text.setString("ЗОЛОТО:");//задаем строку тексту и вызываем сформированную выше строку методом .str() 
 		text.setPosition(1412,2120);//задаем позицию текста, отступая от центра камеры
 		window.draw(text);//рисую этот текст
-		view.setCenter( Claw.x,Claw.y);
+		view.setCenter(float(Claw.x),float(Claw.y));
 		window.draw(text);
 		window.setView(view);
 

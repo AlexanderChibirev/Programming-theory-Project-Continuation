@@ -12,7 +12,7 @@ using namespace sf;
 class Entity
 {
 public:
-	float x,y,dx,dy,w,h;
+	double x,y,dx,dy,w,h;
 	AnimationManager anim;
 	std::vector<Object> obj;
 	bool life, dir;
@@ -20,7 +20,7 @@ public:
 	std::string Name;
 	int Health;
 
-	Entity(AnimationManager &A,int X, int Y)
+	Entity(AnimationManager &A,float X, float Y)
 	{
 		anim = A;
 		x = X;
@@ -37,15 +37,15 @@ public:
 
 	void draw(RenderWindow &window)
 	{
-		anim.draw(window,x,y+h);
+		anim.draw(window,float(x),float(y+h));
 	}
 
 	FloatRect getRect()
 	{
-		return FloatRect(x,y,w,h);
+		return FloatRect(float(x), float(y), float(w), float(h));
 	}
 
-	void option(std::string NAME, float SPEED=0, int HEALTH=10, std::string FIRST_ANIM="")
+	void option(std::string NAME, double SPEED=0, int HEALTH=10, std::string FIRST_ANIM="")
 	{
 		Name = NAME;
 		if (FIRST_ANIM!="") anim.set(FIRST_ANIM);

@@ -33,7 +33,7 @@ public:
 		                                    if (!loop) {isPlaying=false; return;}
 		                                  }
 
-		int i = currentFrame;
+		int i = int(currentFrame);
 		sprite.setTextureRect( frames[i] );
 		if (flip) sprite.setTextureRect( frames_flip[i] );
 	}
@@ -57,18 +57,18 @@ public:
 	}
 
    //создание анимаций вручную
-	void create(std::string name, Texture &texture, int x, int y, int w, int h, int count, float speed, int step=0, bool Loop=true)//имя,
+	void create(std::string name, Texture &texture, int x, int y, int w, float h, int count, double speed, int step=0, bool Loop=true)//имя,
 	{
 		Animation a;
-		a.speed = speed;
+		a.speed = float(speed);
 		a.loop = Loop;
 		a.sprite.setTexture(texture);
 		a.sprite.setOrigin(0,h);
 
 		for (int i=0;i<count;i++)
 		{
-			a.frames.push_back( IntRect(x+i*step, y, w, h)  );//х *количество спрайтов, у, ширина, высота
-			a.frames_flip.push_back( IntRect(x+i*step+w, y, -w, h)  );//обратное отображение
+			a.frames.push_back( IntRect(x+i*step, y, w, int(h))  );//х *количество спрайтов, у, ширина, высота
+			a.frames_flip.push_back( IntRect(x+i*step+w, y, -w, int(h))  );//обратное отображение
 		}
 		animList[name] = a;
 		currentAnim = name;
@@ -91,7 +91,7 @@ public:
 			Animation anim;
 			currentAnim = animElement->Attribute("title");
 			int delay = atoi(animElement->Attribute("delay"));
-			anim.speed = 1.0/delay; anim.sprite.setTexture(t);
+			anim.speed = float(1.0/delay); anim.sprite.setTexture(t);
 
 			TiXmlElement *cut;
 			cut = animElement->FirstChildElement("cut");
@@ -108,7 +108,7 @@ public:
 			}
 			//если изображение сидеть зеркальное, то мы ставим на х = *anim.frames[0].width*, для нормального
 			//если просто, то х = *0*
-			anim.sprite.setOrigin(0,anim.frames[0].height);
+			anim.sprite.setOrigin(0,float(anim.frames[0].height));
 
 			animList[currentAnim] = anim;
 			animElement = animElement->NextSiblingElement("animation");
@@ -121,7 +121,7 @@ public:
 		animList[currentAnim].flip=0;
 	}
 
-	void draw(RenderWindow &window,int x=0, int y=0)// смещаем координаты
+	void draw(RenderWindow &window, float x=0, float y=0)// смещаем координаты
 	{
 		animList[currentAnim].sprite.setPosition(x,y);
 		window.draw( animList[currentAnim].sprite );
