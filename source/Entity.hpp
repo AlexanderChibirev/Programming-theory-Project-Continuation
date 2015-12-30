@@ -16,7 +16,7 @@ public:
 	AnimationManager anim;
 	std::vector<Object> obj;
 	bool life, dir;
-	float timer, timer_end;
+	float timer, timer_end,time_x,time_y;
 	std::string Name;
 	int Health;
 

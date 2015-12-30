@@ -10,20 +10,23 @@ public:
 
 	ENEMY(AnimationManager &a,Level &lev,float x,float y):Entity(a,x,y)
 	{
-		option("Enemy", 0.01, 15, "move");
+		//option("Player", float(1), 100, "stay");
+		option("easyEnemy", float(0.02), 10, "run");
 	}
 
 	void update(float time)
-	{
+	{ //dir 1 в норм сторону 0 нет
 		x+=dx*time;
 		timer+=time;
-		if (timer>3200) {dx*=-1;timer=0;}
-
-		if (Health<=0) {anim.set("dead"); dx=0;
-			           timer_end+=time;
-		               if (timer_end>4000) life=false;
-		              }
-
+		anim.flip(dir);
+		if (timer > 7000)
+		{
+			cout << "h";
+			dx *= -1;
+			dir = !dir;
+			timer = 0;
+		}
+		//if (Health <= 0) { CurrentFrame += 0.005*time; anim.set("dead"); }
 		anim.tick(time);
 	}
 };

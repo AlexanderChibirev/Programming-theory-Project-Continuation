@@ -11,7 +11,7 @@ class PLAYER : public Entity
 {
 public:
 	enum { stay, run, jump, climb, dead_spike, ends_of_the_earth, sit_down,hit_sword, hit_sword_sit, fall} STATE;
-	bool onLadder, shoot,YY;
+	bool onLadder, shoot, hit_on_enemy;
 	std::map<std::string, bool> key;
 
 	PLAYER(AnimationManager &a, Level &lev, float x, float y) :Entity(a, x, y)

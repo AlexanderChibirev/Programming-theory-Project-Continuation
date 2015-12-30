@@ -19,15 +19,12 @@
   <cut w="95" x="764" y="1044" h="99" row="1" col="1"/>
   <cut w="122" x="877" y="1048" h="95" row="1" col="1"/>
  </animation>
- <animation title="stay" delay="150">
-  <cut w="66" x="2" y="115" h="116" row="1" col="1"/>
-  <cut w="66" x="73" y="117" h="115" row="1" col="1"/>
-  <cut w="66" x="155" y="119" h="113" row="1" col="1"/>
-  <cut w="67" x="235" y="117" h="115" row="1" col="1"/>
-  <cut w="69" x="312" y="117.5" h="115" row="1" col="1"/>
-  <cut w="72" x="392" y="115" h="116" row="1" col="1"/>
-  <cut w="74" x="473" y="115" h="116" row="1" col="1"/>
-  <cut w="71" x="553" y="116" h="115" row="1" col="1"/>
+ <animation title="stay" delay="270">
+  <cut w="66" x="-1" y="116" h="116" row="1" col="1"/>
+  <cut w="66" x="72" y="115" h="116" row="1" col="1"/>
+  <cut w="66" x="152" y="116" h="116" row="1" col="1"/>
+  <cut w="66" x="72" y="115" h="116" row="1" col="1"/>
+  <cut w="66" x="-1" y="116" h="116" row="1" col="1"/>
  </animation>
  <animation title="run" delay="200">
   <cut w="83" x="5" y="3" h="106" row="1" col="1"/>

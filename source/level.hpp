@@ -11,7 +11,7 @@
 struct Object
 {
     int GetPropertyInt(std::string name);
-    float GetPropertyFloat(std::string name);
+    double GetPropertyFloat(std::string name);
     std::string GetPropertyString(std::string name);
 
     std::string name;
@@ -55,7 +55,7 @@ int Object::GetPropertyInt(std::string name)
     return atoi(properties[name].c_str());
 }
 
-float Object::GetPropertyFloat(std::string name)
+double Object::GetPropertyFloat(std::string name)
 {
     return strtod(properties[name].c_str(), NULL);
 }
@@ -309,6 +309,8 @@ Object Level::GetObject(std::string name)
     for (int i = 0; i < objects.size(); i++)
         if (objects[i].name == name)
             return objects[i];
+	return Object();
+	// откуда мне ее взять ? просто создать пустую или что ?Что-то в этм роде. Тут смотри, рассчет на то, что у тебя может это услвие в цикле и не выполнится и программа упадет. А таакого не должно быть
 }
 
 std::vector<Object> Level::GetObjects(std::string name)

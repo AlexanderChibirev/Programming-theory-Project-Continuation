@@ -8,17 +8,22 @@ public:
 
 	void update(float time)
 	{
+		
+		
 		if(Name == "movingPlatformX"){
+			
 		x += dx * time;
-		timer+=time;
-		if (timer>6000) {dx*=-1;timer=0;}
+		time_x += time;
+		if (time_x >16000) {dx *= -1; time_x = 0;}
 		anim.tick(time);
 		}
 		else
-			y += dx * time;
-			timer += time;
-			if (timer>6000) { dx *= -1; timer = 0; }
+		{
+			y+= dx * time;
+			time_y += time;	
+			if (time_y  > 1000) { dx *= -1; time_y = 0; }
 			anim.tick(time);
+		}
 	}
 
 };
