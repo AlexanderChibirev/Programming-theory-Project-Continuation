@@ -1,6 +1,4 @@
-#ifndef ANIMATION_H
-#define ANIMATION_H
-
+#pragma once
 #include "TinyXML/tinyxml.h"
 #include <SFML/Graphics.hpp>
 
@@ -11,8 +9,11 @@ class Animation
 {
 public:
 	std::vector<IntRect> frames, frames_flip;
-	float currentFrame, speed;
-	bool loop, flip, isPlaying;   // loop показвает зациклена ли анимация. Например анимация взрыва должна проиграться один раз и остановиться, loop=false
+	float currentFrame;
+	float speed;
+	bool loop;
+	bool flip;
+	bool isPlaying;   // loop показвает зациклена ли анимация. Например анимация взрыва должна проиграться один раз и остановиться, loop=false
 	Sprite sprite;
 
 	Animation()
@@ -106,7 +107,7 @@ public:
 				anim.frames_flip.push_back( IntRect(x+w,y,-w,h)  );
 				cut = cut->NextSiblingElement("cut");
 			}
-			//если изображение сидеть зеркальное, то мы ставим на х = *anim.frames[0].width*, для нормального
+			//если изображение "сидеть" зеркальное, то мы ставим на х = *anim.frames[0].width*, для нормального
 			//если просто, то х = *0*
 			anim.sprite.setOrigin(0,float(anim.frames[0].height));
 
@@ -145,4 +146,4 @@ public:
 	//////////////////////////////////////
 };
 
-#endif ANIMATION_H
+#pragma once

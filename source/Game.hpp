@@ -1,6 +1,4 @@
-#ifndef GAME_H
-#define GAME_H
-
+#pragma once
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include <list>
@@ -11,25 +9,39 @@
 #include "Enemy.hpp"
 #include "MovingPlatform.hpp"
 #include "levelObjects.hpp"
+
+
 using namespace sf;
 
+void GameInit(RenderWindow &window) {
+	
+}
 
 void RunGame()
 {
 	///////////// инициализация ///////////////////////////
-	RenderWindow window(VideoMode(950, 780), "Claw");
+	RenderWindow window(VideoMode(750, 550), "Claw");
 
-	View view( FloatRect(0, 0, 500, 400) );
+	View view( FloatRect(0, 0, 750, 550) );
 
 	Level lvl;
 	lvl.LoadFromFile("files/Level1.tmx");
 
-	Texture moveplatform_t, claw_t, enemy_t, coin_t, level1_Objects_t;
+	Texture moveplatform_t;
+	Texture claw_t;
+	Texture enemy_t;
+	Texture coin_t;
+	Texture level1_Objects_t;
+	Texture background_t;
+
+
+	background_t.loadFromFile("files/images/bg.png");
 	moveplatform_t.loadFromFile("files/images/movingPlatform.png");
     claw_t.loadFromFile("files/images/hero.png");
 	enemy_t.loadFromFile("files/images/Enemies-OfficerF.png");
 	level1_Objects_t.loadFromFile("files/images/level1_Objects.png");
 	coin_t.loadFromFile("files/images/coin.png");
+	
 
 	AnimationManager hero_anim;//загружаем героя
 	hero_anim.loadFromXML("files/anim_hero.xml", claw_t);
@@ -38,6 +50,7 @@ void RunGame()
 	AnimationManager enemy_anim;//загрузка врага
 	enemy_anim.create("run", enemy_t, 0, 0, 96, 128, 11, 0.005, 96);
 	enemy_anim.create("dead", enemy_t, 0, 720, 112, 112, 7, 0.005, 112);
+	enemy_anim.create("attack", enemy_t, 0, 264, 168, 128, 5, 0.005, 168);
 
 	AnimationManager level1_Objects;//загрузка фоновых движущихся объектов
 	level1_Objects.create("move", level1_Objects_t, 0, 728, 56, 128, 4, 0.005, 56);
@@ -53,7 +66,9 @@ void RunGame()
 	
 	AnimationManager move_platform_y;
 	move_platform_y.create("move", moveplatform_t, 0, 0, 95, 32, 1, 0);
-	//pullUpLadder
+
+	Sprite background(background_t);
+	background.setOrigin(float(background_t.getSize().x / 2), float(background_t.getSize().y / 2));
 
 	std::list<Entity*>  entities;
 	std::list<Entity*>::iterator it;
@@ -90,48 +105,38 @@ void RunGame()
 	for (int i = 0; i < e.size(); i++)
 		entities.push_back(new MovingPlatform(move_platform_x_y, lvl, e[i].rect.left, e[i].rect.top, "movingPlatformY"));
 
-	Font font;//шрифт 
-	font.loadFromFile("CyrilicOld.ttf");//передаем нашему шрифту файл шрифта
-	Text text("", font, 20);//создаем объект текст. закидываем в объект текст строку, шрифт, размер шрифта(в пикселях);//сам объект текст (не строка)
-	text.setColor(Color::White);//покрасили текст в красный. если убрать эту строку, то по умолчанию он белый
-	text.setStyle(sf::Text::Bold | sf::Text::Underlined);
-
 	Object pl = lvl.GetObject("player");
 	PLAYER Claw(hero_anim, lvl, float(pl.rect.left), float(pl.rect.top));
 	Clock clock;
-	//Clock cloker;
-
-	/////////////////// основной цикл  /////////////////////
+	double CurrentFrame = 0;
+	bool dir = false;
+	/////////////////// основной цикл (код) /////////////////////
 	while (window.isOpen())
 	{
 		sf::Int64 time = clock.getElapsedTime().asMicroseconds();
-		//sf::Int64 timer_for_plat = clock.getElapsedTime().asMicroseconds();
 		clock.restart();
 
 		time = time/500;  // здесь регулируем скорость игры
-		//timer_for_plat = timer_for_plat / 500;
-		//if (time > 40) time = 40;
-
+		
 		Event event;
 		while (window.pollEvent(event))
 		{
 			if (event.type == Event::Closed)
 				window.close();
 		}
-
 		//передвижение
-		if (Keyboard::isKeyPressed(Keyboard::Left)) Claw.key["L"]=true;
-		if (Keyboard::isKeyPressed(Keyboard::Right)) Claw.key["R"]=true;
-		if (Keyboard::isKeyPressed(Keyboard::Down)) Claw.key["climb_down"]=true;
+		if (Keyboard::isKeyPressed(Keyboard::Left)) { Claw.key["L"] = true; }
+		if (Keyboard::isKeyPressed(Keyboard::Right)) { Claw.key["R"] = true; }
+		if (Keyboard::isKeyPressed(Keyboard::Down)) { Claw.key["climb_down"] = true;}
 		//прыжок
-		if (Keyboard::isKeyPressed(Keyboard::Space)) Claw.key["jump"] = true;
+		if (Keyboard::isKeyPressed(Keyboard::Space)) { Claw.key["jump"] = true;}
 		//по лестнице
-		if (Keyboard::isKeyPressed(Keyboard::Up)) Claw.key["climb_up"] = true;
+		if (Keyboard::isKeyPressed(Keyboard::Up)) { Claw.key["climb_up"] = true;}
 		//атака
-		//float timeer = cloker.getElapsedTime().asSeconds();
-		if (Keyboard::isKeyPressed(Keyboard::LControl)) { 
-			Claw.key["l_control"] = true; }
-		//if (timeer > 3) Claw.key["l_control"] = false;
+		if ((Keyboard::isKeyPressed(Keyboard::LControl))) {
+			Claw.key["l_control"] = true;
+		}
+		
 		//вызываем обновление для всех объектов
 		for(it=entities.begin();it!=entities.end();)
 		{
@@ -155,7 +160,7 @@ void RunGame()
 					if (Claw.dy > 0)
 						if (Claw.y + Claw.h < movPlatY->y + movPlatY->h)
 						{
-							Claw.y = movPlatY->y - Claw.h + 10;/* Claw.x += movPlatY->dx*time;*/ Claw.dy = 0; Claw.STATE = PLAYER::stay;
+							Claw.y = movPlatY->y - Claw.h + 10; Claw.dy = 0; Claw.STATE = PLAYER::stay;
 						}
 			}
 			//3движущиеся платформа вправо влево
@@ -172,29 +177,34 @@ void RunGame()
 			//3.. и т.д.
 			if ((*it)->Name == "easyEnemy")
 			{
+				//if (Claw.dir) Claw.x += 10; else Claw.x -= 10; при ударе отскок
 				Entity *enemy = *it;
 				//Claw.timer += time;
 				//if (Claw.timer > 3000) { enemy->dx *= -1; Claw.timer = 0; enemy->anim.flip(); }//меняет направление примерно каждые 3 сек(альтернативная версия смены направления)
 
-				if (enemy->Health <= 0) continue;
-
-				if (Claw.getRect().intersects(enemy->getRect()))
-					if (Claw.dy>0) { enemy->dx = 0; Claw.dy = -0.2; enemy->Health = 0; }
+				if (enemy->Health <= 0) { continue;} //для прекращения вызова анимации(удар от врага)
+				if (Claw.getRect().intersects(enemy->getRect())) {
+					if (Claw.shoot) { enemy->dx = 0; enemy->Health -= 0.25; }
 					else if (!Claw.hit_on_enemy) {
-						Claw.Health -= 5; Claw.hit_on_enemy = true;
+						Claw.Health -= 5;
+						enemy->attack_straight = true;
+						if (enemy->attack_straight) { Claw.hit_on_enemy = true; }
+						else { Claw.hit_on_enemy = false; }
 						if (Claw.dir) Claw.x += 10; else Claw.x -= 10;
 					}
+				}
 			}
 		}
 
 
 		/////////////////////отображаем на экран/////////////////////
-		text.setString("ЗОЛОТО:");//задаем строку тексту и вызываем сформированную выше строку методом .str() 
-		text.setPosition(1412,2120);//задаем позицию текста, отступая от центра камеры
-		window.draw(text);//рисую этот текст
 		view.setCenter(float(Claw.x),float(Claw.y));
-		window.draw(text);
+
 		window.setView(view);
+
+		background.setPosition(view.getCenter());
+		window.draw(background);
+
 
 		lvl.Draw(window);
 
@@ -202,12 +212,9 @@ void RunGame()
 			(*it)->draw(window);
 
 		Claw.draw(window);
-
 		window.display();
+
 	}
 
 
 }
-
-#endif GAME_H
-

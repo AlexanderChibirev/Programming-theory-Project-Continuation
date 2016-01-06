@@ -2,8 +2,6 @@
 
 int main()
 {
-
-	RunGame();
-
+	RunGame();	
 	return 0;
 }

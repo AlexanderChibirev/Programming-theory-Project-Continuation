@@ -1,6 +1,4 @@
-#ifndef ENTITY_H
-#define ENTITY_H
-
+#pragma once
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include "Animation.hpp"
@@ -12,13 +10,26 @@ using namespace sf;
 class Entity
 {
 public:
-	double x,y,dx,dy,w,h;
+	double x;
+	double y;
+	double dx;
+	double dy; 
+	double w;
+	double h;
+	double currentFrame;	
 	AnimationManager anim;
 	std::vector<Object> obj;
-	bool life, dir;
-	float timer, timer_end,time_x,time_y;
+	bool life;
+	bool  dir;
+	bool clash = false;
+	bool dir_attack = false;
+	bool attack_straight = false;
+	float timer;
+	float timer_end;
+	float time_x;
+	float time_y;
 	std::string Name;
-	int Health;
+	float Health;
 
 	Entity(AnimationManager &A,float X, float Y)
 	{
@@ -31,6 +42,7 @@ public:
 		timer=0;
 		timer_end=0;
 		dx=dy=0;
+		
 	}
 
 	virtual void update(float time) = 0;
@@ -45,7 +57,7 @@ public:
 		return FloatRect(float(x), float(y), float(w), float(h));
 	}
 
-	void option(std::string NAME, double SPEED=0, int HEALTH=10, std::string FIRST_ANIM="")
+	void option(std::string NAME, double SPEED=0, float HEALTH=10, std::string FIRST_ANIM="")
 	{
 		Name = NAME;
 		if (FIRST_ANIM!="") anim.set(FIRST_ANIM);
@@ -58,4 +70,3 @@ public:
 };
 
 
-#endif ENTITY_H

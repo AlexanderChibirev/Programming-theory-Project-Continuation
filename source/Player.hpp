@@ -1,5 +1,4 @@
-#ifndef PLAYER_H
-#define PLAYER_H
+#pragma once
 
 #include "Entity.hpp"
 #include <iostream>
@@ -11,13 +10,16 @@ class PLAYER : public Entity
 {
 public:
 	enum { stay, run, jump, climb, dead_spike, ends_of_the_earth, sit_down,hit_sword, hit_sword_sit, fall} STATE;
-	bool onLadder, shoot, hit_on_enemy;
+	bool onLadder;
+	bool shoot;
+	bool hit_on_enemy;
 	std::map<std::string, bool> key;
 
 	PLAYER(AnimationManager &a, Level &lev, float x, float y) :Entity(a, x, y)
 	{
 		option("Player", float(1), 100, "stay"); //имя, = ,жизни, состояние
-		STATE = stay;
+		STATE = stay; 
+		hit_on_enemy = false;
 		obj = lev.GetAllObjects();
 	}
 
@@ -83,10 +85,6 @@ public:
 		{
 			if (STATE == climb) dy = 0;
 		}
-		if (!key["l_control"])
-		{
-			shoot = false;
-		}
 
 		key["R"] = key["L"] = key["jump"] = key["climb_down"] = key["climb_up"] = key["l_control"] = false;
 	}
@@ -108,18 +106,34 @@ public:
 			Health = 0; }
 		if (STATE == ends_of_the_earth) {
 			timer += time;
-			if (timer > 5000) { dx = 2;  timer = 0; STATE = fall; }
-			anim.set("ends_of_the_earth");  }
-		if (shoot) {			
-			dx = 0;
-			//cout <<"GGGGGGGGGGGGGGGGGGGGGGGGGGGG"<< x<<"====="<< y;
-			anim.set("hit_sword");
-			if (STATE == sit_down) {
-				anim.set("hit_sword_down");
+			if (dir){
+			x = x - 0,9999;
 			}
-			 }
+			if (timer > 5000) { if (dir) { dx = -2;  timer = 0; STATE = fall; } else { dx = 2;  timer = 0; STATE = fall; } }
+			anim.set("ends_of_the_earth");  }
+		if (shoot && STATE != dead_spike) {
+			dx = 0;
+			anim.set("fist_fight");
+			timer += time;
+			if (timer > 600) { shoot = false; timer = 0; }
+			cout << timer << "\n";
+			if (STATE == sit_down) {
+				if (dir == 1) {  }
+				anim.set("hit_sword_down");
+
+			}
+			}
+		if (hit_on_enemy && STATE!= dead_spike && shoot == false) {
+			timer += time;
+			if (timer > 1000) { 
+				hit_on_enemy = false;
+				timer = 0;}
+			anim.set("hit_on_enemy");
+		}
 		if (dy > 0 && STATE != climb && (STATE != dead_spike)) { anim.set("fall");}
-		if (dir) anim.flip();
+
+		if (dir) anim.flip();//переворачиваем если что)
+
 		anim.tick(time);
 	}
 
@@ -158,6 +172,7 @@ public:
 					if (STATE == climb) x = obj[i].rect.left - 10;
 				}
 				/*if ((int(x) == 1920)||(int(x) == 1919)||(int(x) == 1918) || (int(x) == 1917)|| (int(x) == 1916)|| (int(x) == 1915)|| (int(x) == 1914)|| (int(x) == 1913)) {
+				или лучше так 1913 < int(x) < 1920.....
 				cout<<int(x);
 				STATE = ends_of_the_earth;
 				}*/
@@ -172,11 +187,11 @@ public:
 				if (obj[i].name == "spikes") {
 					STATE = dead_spike;
 				}
+				if (obj[i].name == "esayEnemy") {
+					cout << "hello";
+				}
 
 			}
 	}
 
 };
-
-
-#endif PLAYER_H

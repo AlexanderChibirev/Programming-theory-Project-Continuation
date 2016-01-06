@@ -26,7 +26,7 @@
   <cut w="66" x="72" y="115" h="116" row="1" col="1"/>
   <cut w="66" x="-1" y="116" h="116" row="1" col="1"/>
  </animation>
- <animation title="run" delay="200">
+ <animation title="run" delay="160">
   <cut w="83" x="5" y="3" h="106" row="1" col="1"/>
   <cut w="93" x="116" y="10" h="99" row="1" col="1"/>
   <cut w="91" x="226" y="7" h="102" row="1" col="1"/>
@@ -59,14 +59,24 @@
  <animation title="sit_down" delay="100">
   <cut w="80" x="335" y="763" h="70" row="1" col="1"/>
  </animation>
+ 
  <animation title="hit_sword" delay="200">
   <cut w="66" x="35" y="236" h="116" row="1" col="1"/>
   <cut w="72" x="189" y="235" h="116" row="1" col="1"/>
   <cut w="100" x="346" y="235" h="116" row="1" col="1"/>
   <cut w="160" x="470" y="235" h="116" row="1" col="1"/>
  </animation>
- <animation title="hit_sword_down" delay="150">
-  <cut w="145" x="335" y="763" h="70" row="1" col="1"/>
+ <animation title="hit_sword_mirror" delay="200">
+  <cut w="160" x="712" y="2876" h="110" row="1" col="1"/>
+  <cut w="160" x="706" y="2749" h="110" row="1" col="1"/>
+  <cut w="160" x="289" y="2762" h="93" row="1" col="1"/>
+  <cut w="320" x="247" y="2897" h="85" row="1" col="1"/>
+ </animation>
+ <animation title="hit_sword_down" delay="200">
+  <cut w="80" x="335" y="763" h="70" row="1" col="1"/>
+  <cut w="84" x="178" y="761" h="72" row="1" col="1"/>
+  <cut w="93" x="481" y="764" h="69" row="1" col="1"/>
+  <cut w="145" x="597" y="765" h="68" row="1" col="1"/>
  </animation>
   <animation title="fall" delay="150">
   <cut w="87" x="2" y="1505" h="103" row="1" col="1"/>
@@ -75,7 +85,7 @@
   <cut w="82" x="275" y="1503" h="105" row="1" col="1"/>
   <cut w="82" x="364" y="1503" h="105" row="1" col="1"/>
  </animation>
-  <animation title="fist_fight" delay="350">
+  <animation title="fist_fight" delay="200">
   <cut w="68" x="11" y="491.25" h="116" row="1" col="1"/>
   <cut w="67" x="118" y="491" h="116" row="1" col="1"/>
   <cut w="97" x="219" y="491" h="116" row="1" col="1"/>
@@ -92,5 +102,11 @@
   <cut w="55" x="233" y="2149" h="84" row="1" col="1"/>
   <cut w="55" x="310" y="2147" h="86" row="1" col="1"/>
   <cut w="56" x="386" y="2132" h="101" row="1" col="1"/>
+ </animation>
+  <animation title="hit_on_enemy" delay="170">
+  <cut w="57" x="111" y="2480" h="112" row="1" col="1"/>
+  <cut w="76" x="8" y="2592" h="112" row="1" col="1"/>
+  <cut w="83" x="5" y="2478" h="112" row="1" col="1"/>
+  <cut w="61" x="105" y="2594" h="112" row="1" col="1"/>
  </animation>
 </sprites>

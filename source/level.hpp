@@ -1,6 +1,4 @@
-#ifndef LEVEL_H
-#define LEVEL_H
-
+#pragma once
 #include <string>
 #include <vector>
 #include <map>
@@ -343,5 +341,3 @@ void Level::Draw(sf::RenderWindow &window)
 		for(int tile = 0; tile < layers[layer].tiles.size(); tile++)
 			window.draw(layers[layer].tiles[tile]);
 }
-
-#endif
