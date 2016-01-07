@@ -64,7 +64,7 @@ public:
 		a.speed = float(speed);
 		a.loop = Loop;
 		a.sprite.setTexture(texture);
-		a.sprite.setOrigin(0,h);
+		a.sprite.setOrigin(20,h);
 
 		for (int i=0;i<count;i++)
 		{

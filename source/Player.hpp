@@ -3,6 +3,7 @@
 #include "Entity.hpp"
 #include <iostream>
 #include "Game.hpp"
+#include "Enemy.hpp"
 using namespace std;
 
 
@@ -116,7 +117,7 @@ public:
 			anim.set("fist_fight");
 			timer += time;
 			if (timer > 600) { shoot = false; timer = 0; }
-			cout << timer << "\n";
+			//cout << timer << "\n";
 			if (STATE == sit_down) {
 				if (dir == 1) {  }
 				anim.set("hit_sword_down");
@@ -188,7 +189,7 @@ public:
 					STATE = dead_spike;
 				}
 				if (obj[i].name == "esayEnemy") {
-					cout << "hello";
+					//cout << "hello";
 				}
 
 			}

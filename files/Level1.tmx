@@ -40,8 +40,8 @@
   <object id="215" name="solid_for_enemy" x="1907" y="2103" width="38" height="143"/>
   <object id="217" name="solid_for_enemy" x="2596" y="2106.5" width="38" height="143"/>
   <object id="221" name="player" x="1670.33" y="2113" width="68" height="120"/>
-  <object id="226" name="easyEnemy" x="1281" y="2103" width="168" height="128"/>
-  <object id="228" name="easyEnemy" x="2050" y="2105" width="168" height="128"/>
+  <object id="226" name="easyEnemy" x="1281" y="2114" width="168" height="128"/>
+  <object id="228" name="easyEnemy" x="2050" y="2107" width="168" height="128"/>
  </objectgroup>
  <layer name="стены2" width="100" height="90">
   <data>
