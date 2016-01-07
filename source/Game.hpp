@@ -48,9 +48,9 @@ void RunGame()
 	hero_anim.animList["jump"].loop = 0;
 
 	AnimationManager enemy_anim;//загрузка врага
-	enemy_anim.create("run", enemy_t, 0, 0, 96, 129, 8, 0.005, 96);
+	enemy_anim.create("run", enemy_t, 0, 0, 120, 129, 8, 0.005, 120);
 	enemy_anim.create("dead", enemy_t, 0, 720, 112, 112, 7, 0.005, 112);
-	enemy_anim.create("attack", enemy_t, 0, 264, 168, 128, 5, 0.005, 168);
+	enemy_anim.create("attack", enemy_t, 0, 264, 168, 128, 5, 0.006, 168);
 
 	AnimationManager level1_Objects;//загрузка фоновых движущихся объектов
 	level1_Objects.create("move", level1_Objects_t, 0, 728, 56, 128, 4, 0.005, 56);
@@ -191,12 +191,12 @@ void RunGame()
 						if (enemy->attack_straight) { Claw.hit_on_enemy = true; cout <<"HERO_HP = " << Claw.Health << "\n"; }
 						if (Claw.dir) {
 							enemy->dir = 1;
-							enemy->x = enemy->x + 10; //смещаем при атаке
+							enemy->x = enemy->x + 2; //смещаем при атаке
 							//Claw.x += 10;
 						}
 						else {
 							enemy->dir = 0;
-							enemy->x = enemy->x - 10; //смещаем при атаке
+							enemy->x = enemy->x - 2; //смещаем при атаке
 							//Claw.x -= 10;
 						}
 

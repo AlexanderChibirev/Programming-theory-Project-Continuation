@@ -18,7 +18,7 @@
   <object id="117" name="solid" x="304.667" y="1507.33" width="26" height="123.333"/>
   <object id="124" name="solid" x="-16.5" y="1502" width="348" height="32.1665"/>
   <object id="154" name="coin" x="603.5" y="2242" width="30" height="32"/>
-  <object id="155" name="solid" x="1188.67" y="2244" width="569.33" height="24"/>
+  <object id="155" name="solid" x="1236" y="2244" width="522" height="24"/>
   <object id="156" name="solid" x="1793" y="2244" width="1210" height="24"/>
   <object id="161" name="spikes" x="1033.67" y="2362.67" width="166.333" height="58.3333"/>
   <object id="167" name="solid" x="908.167" y="2398.67" width="541" height="24"/>

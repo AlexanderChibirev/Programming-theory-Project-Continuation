@@ -1,0 +1,9 @@
+<!DOCTYPE SpriteDecomposer>
+<sprites image="hero.png" transparentColor="">
+ <animation title="Default animation" delay="150">
+  <cut w="160" x="590" y="241" h="110" row="1" col="1"/>
+  <cut w="160" x="379" y="241" h="110" row="1" col="1"/>
+  <cut w="160" x="190" y="242" h="110" row="1" col="1"/>
+  <cut w="160" x="20" y="243" h="110" row="1" col="1"/>
+ </animation>
+</sprites>

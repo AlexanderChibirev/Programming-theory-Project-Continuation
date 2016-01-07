@@ -19,7 +19,7 @@
   <cut w="95" x="764" y="1044" h="99" row="1" col="1"/>
   <cut w="122" x="877" y="1048" h="95" row="1" col="1"/>
  </animation>
- <animation title="stay" delay="270">
+ <animation title="stay" delay="170">
   <cut w="66" x="-1" y="116" h="116" row="1" col="1"/>
   <cut w="66" x="72" y="115" h="116" row="1" col="1"/>
   <cut w="66" x="152" y="116" h="116" row="1" col="1"/>
@@ -56,15 +56,15 @@
   <cut w="113" x="761" y="2634" h="70" row="1" col="1"/>
   <cut w="99" x="884" y="2658" h="44" row="1" col="1"/>
  </animation>
- <animation title="sit_down" delay="100">
+ <animation title="sit_down" delay="10000">
   <cut w="80" x="335" y="763" h="70" row="1" col="1"/>
  </animation>
  
  <animation title="hit_sword" delay="200">
-  <cut w="66" x="35" y="236" h="116" row="1" col="1"/>
-  <cut w="72" x="189" y="235" h="116" row="1" col="1"/>
-  <cut w="100" x="346" y="235" h="116" row="1" col="1"/>
-  <cut w="160" x="470" y="235" h="116" row="1" col="1"/>
+   <cut w="160" x="590" y="241" h="110" row="1" col="1"/>
+  <cut w="160" x="379" y="241" h="110" row="1" col="1"/>
+  <cut w="160" x="190" y="242" h="110" row="1" col="1"/>
+  <cut w="160" x="20" y="243" h="110" row="1" col="1"/>
  </animation>
  <animation title="hit_sword_mirror" delay="200">
   <cut w="160" x="712" y="2876" h="110" row="1" col="1"/>

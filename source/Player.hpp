@@ -93,7 +93,14 @@ public:
 	{
 		//Clock cloker;
 		//cout << x << "=====" << y;
-		if (STATE == stay ) anim.set("stay");
+		switch (STATE)
+		{
+		case stay:
+			anim.set("stay");
+			break;
+		default:
+			break;
+		}
 		if (STATE == run) anim.set("run");
 		if (STATE == jump) { anim.set("jump"); }
 		if (STATE == sit_down) anim.set("sit_down");
@@ -118,20 +125,20 @@ public:
 			timer += time;
 			if (timer > 600) { shoot = false; timer = 0; }
 			//cout << timer << "\n";
-			if (STATE == sit_down) {
+			/*if (STATE == sit_down) {
 				if (dir == 1) {  }
 				anim.set("hit_sword_down");
 
+			}*/
 			}
-			}
-		if (hit_on_enemy && STATE!= dead_spike && shoot == false) {
+		if (hit_on_enemy && STATE!= dead_spike && shoot == false && STATE != sit_down) {
 			timer += time;
 			if (timer > 1000) { 
 				hit_on_enemy = false;
 				timer = 0;}
 			anim.set("hit_on_enemy");
 		}
-		if (dy > 0 && STATE != climb && (STATE != dead_spike)) { anim.set("fall");}
+		if (dy > 0 && STATE != climb && (STATE != dead_spike) ) { anim.set("fall");}
 
 		if (dir) anim.flip();//переворачиваем если что)
 
