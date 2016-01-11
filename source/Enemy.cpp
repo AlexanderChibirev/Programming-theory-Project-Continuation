@@ -19,10 +19,10 @@
 //		dir = !dir;
 //		timer = 0;
 //	}
-//	if (attack_straight == true) {
+//	if (attack_start == true) {
 //		anim.set("attack");
 //		dx = 0;
-//		attack_straight = false;
+//		attack_start = false;
 //		dir_attack = true;
 //	}
 //	if (Health <= 0) {

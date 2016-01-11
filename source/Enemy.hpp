@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Entity.hpp"
 
 
@@ -10,15 +9,12 @@ public:
 	ENEMY(AnimationManager &a,Level &lev,float x,float y):Entity(a,x,y)
 	{
 		//option("Player", float(1), 100, "stay");
-		option("easyEnemy", float(0.06), 10, "run");
+		option("easyEnemy", float(0.08), 10, "run");
 	}
 
 	void update(float time)
 	{ //dir 1 в норм сторону 0  зеркально
-		if (dir_attack == false){
-			timer += time;
-		}
-		
+		timer += time;
 		if (timer > 4000 && (dir_attack == false))
 		{
 			x += dx*time;
@@ -26,10 +22,18 @@ public:
 			dir = !dir;
 			timer = 0;
 		}
-		if (attack_straight == true) { anim.set("attack");
-		dx = 0; 
-		attack_straight = false;
-		dir_attack = true;
+		if (attack_start == true) {
+			anim.set("attack");
+			attack_start = false;
+			dir_attack = true;
+		}
+		if (Health > 0 && claw_shoot == true) { 
+			anim.set("hit_on_hero");
+			timer += time; 
+			if (timer > 1000) {
+				//anim.set("attack");
+				claw_shoot = false;
+			}
 		}
 		if (Health <= 0) {
 			anim.set("dead");

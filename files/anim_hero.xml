@@ -56,8 +56,12 @@
   <cut w="113" x="761" y="2634" h="70" row="1" col="1"/>
   <cut w="99" x="884" y="2658" h="44" row="1" col="1"/>
  </animation>
- <animation title="sit_down" delay="10000">
-  <cut w="80" x="335" y="763" h="70" row="1" col="1"/>
+ <animation title="sit_down" delay="100">
+  <cut w="131" x="0" y="743" h="98" row="1" col="1"/>
+  <cut w="131" x="157" y="743" h="98" row="1" col="1"/>
+  <cut w="131" x="312" y="744" h="98" row="1" col="1"/>
+  <cut w="131" x="486" y="742" h="98" row="1" col="1"/>
+  <cut w="131" x="640" y="742.5" h="98" row="1" col="1"/>
  </animation>
  
  <animation title="hit_sword" delay="200">
@@ -79,8 +83,9 @@
   <cut w="145" x="597" y="765" h="68" row="1" col="1"/>
  </animation>
   <animation title="fall" delay="150">
-  <cut w="87" x="2" y="1505" h="103" row="1" col="1"/>
   <cut w="81" x="95" y="1504" h="104" row="1" col="1"/>
+  <cut w="87" x="2" y="1505" h="103" row="1" col="1"/>
+  
   <cut w="87" x="181" y="1504" h="104" row="1" col="1"/>
   <cut w="82" x="275" y="1503" h="105" row="1" col="1"/>
   <cut w="82" x="364" y="1503" h="105" row="1" col="1"/>

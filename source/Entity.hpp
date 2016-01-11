@@ -23,7 +23,8 @@ public:
 	bool  dir;
 	bool clash = false;
 	bool dir_attack = false;
-	bool attack_straight = false;
+	bool claw_shoot = false;
+	bool attack_start = false;
 	float timer;
 	float timer_end;
 	float time_x;

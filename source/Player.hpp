@@ -133,12 +133,15 @@ public:
 			}
 		if (hit_on_enemy && STATE!= dead_spike && shoot == false && STATE != sit_down) {
 			timer += time;
-			if (timer > 1000) { 
-				hit_on_enemy = false;
+			dx = 0;
+			hit_on_enemy = false;
+			if (timer > 500) { 
+				cout << "HERO_HP = " << Health << "\n";
+				Health -= 5;				
 				timer = 0;}
-			anim.set("hit_on_enemy");
+			anim.set("hit_on_enemy");//ударяет враг
 		}
-		if (dy > 0 && STATE != climb && (STATE != dead_spike) ) { anim.set("fall");}
+		if (dy > 0 && STATE != climb && (STATE != dead_spike) ) { anim.set("fall");}//падаение
 
 		if (dir) anim.flip();//переворачиваем если что)
 
@@ -195,7 +198,7 @@ public:
 				if (obj[i].name == "spikes") {
 					STATE = dead_spike;
 				}
-				if (obj[i].name == "esayEnemy") {
+				if (obj[i].name == "easyEnemy") {
 					//cout << "hello";
 				}
 

@@ -17,13 +17,13 @@ void GameInit(RenderWindow &window) {
 	
 }
 
-void RunGame()
+void RunGame(RenderWindow &window)
 {
 	///////////// инициализация ///////////////////////////
-	RenderWindow window(VideoMode(750, 550), "Claw");
 
 	View view( FloatRect(0, 0, 750, 550) );
 
+	int flag = 0;
 	Level lvl;
 	lvl.LoadFromFile("files/Level1.tmx");
 
@@ -33,7 +33,6 @@ void RunGame()
 	Texture coin_t;
 	Texture level1_Objects_t;
 	Texture background_t;
-
 
 	background_t.loadFromFile("files/images/bg.png");
 	moveplatform_t.loadFromFile("files/images/movingPlatform.png");
@@ -48,9 +47,10 @@ void RunGame()
 	hero_anim.animList["jump"].loop = 0;
 
 	AnimationManager enemy_anim;//загрузка врага
+	enemy_anim.create("hit_on_hero", enemy_t, 0, 880, 137, 144, 4, 0.004, 144);
 	enemy_anim.create("run", enemy_t, 0, 0, 120, 129, 8, 0.005, 120);
 	enemy_anim.create("dead", enemy_t, 0, 720, 112, 112, 7, 0.005, 112);
-	enemy_anim.create("attack", enemy_t, 0, 264, 168, 128, 5, 0.006, 168);
+	enemy_anim.create("attack", enemy_t, 0, 264, 168, 128, 5, 0.008, 168);
 
 	AnimationManager level1_Objects;//загрузка фоновых движущихся объектов
 	level1_Objects.create("move", level1_Objects_t, 0, 728, 56, 128, 4, 0.005, 56);
@@ -113,6 +113,7 @@ void RunGame()
 	/////////////////// основной цикл (код) /////////////////////
 	while (window.isOpen())
 	{
+		
 		sf::Int64 time = clock.getElapsedTime().asMicroseconds();
 		clock.restart();
 
@@ -184,27 +185,53 @@ void RunGame()
 
 				if (enemy->Health <= 0) { continue;} //для прекращения вызова анимации(удар от врага)
 				if (Claw.getRect().intersects(enemy->getRect())) {
-					if (Claw.shoot) {/* enemy->dx = 0;*/ enemy->Health -= 0.25; }
+					if (Claw.shoot) { enemy->claw_shoot = true;/* enemy->dx = 0;*/ enemy->Health -= 0.25; }
 					else if (!Claw.hit_on_enemy) {
-						Claw.Health -= 5;
-						enemy->attack_straight = true;
-						if (enemy->attack_straight) { Claw.hit_on_enemy = true; cout <<"HERO_HP = " << Claw.Health << "\n"; }
-						if (Claw.dir) {
-							enemy->dir = 1;
-							enemy->x = enemy->x + 2; //смещаем при атаке
+
+						enemy->attack_start = true;
+						if (enemy->attack_start) { Claw.hit_on_enemy = true; }
+						//////////////////////////////////////////////////////
+						if (Claw.dir == 1 && enemy->dir == 1 /*&& flag == 0*/) {
+							enemy->dir = 1; //если враг смотрит влево и враг смотрит влево, то враг атакует влево
+							cout << "1";
+							flag = 1;
+							enemy->x = enemy->x - 1; //смещаем при атаке
 							//Claw.x += 10;
 						}
-						else {
-							enemy->dir = 0;
-							enemy->x = enemy->x - 2; //смещаем при атаке
+						else if (Claw.dir == 0 && enemy->dir == 0 /*&& flag == 0*/) {
+							enemy->dir = 0; //если персонаж смотрит вправо и враг смотрит вправо, то он бьет его вправо
+							cout << "2";
+							flag = 1;
+							enemy->x = enemy->x + 1; //смещаем при атаке
 							//Claw.x -= 10;
 						}
-
+						//else if (Claw.dir == 0 && enemy->dir == 0 && enemy->dx < 0 /*&& flag == 0*/) {
+						//	enemy->dir = 1; //если персонаж смотрит вправо и враг смотрит вправо, то он бьет его вправо
+						//	cout << "2";
+						//	flag = 1;
+						//	enemy->x = enemy->x + 1; //смещаем при атаке
+						//							 //Claw.x -= 10;
+						//}
+						else if (Claw.dir == 1 && enemy->dir == 0 /*&& flag == 0*/) {
+							enemy->dir = 0; //если перс смотрит влево, а враг вправо, то враг бьет вправо
+							cout << "3";
+							flag = 1;
+							enemy->x = enemy->x + 1; //смещаем при атаке
+							//Claw.x -= 10;
+						}
+						else if (Claw.dir == 0 && enemy->dir == 1 /*&& flag == 0*/) {
+							enemy->dir = 1; //если перс смотрит вправо, а враг влево, то бьет враг влево
+							cout << "4";
+							flag = 1;
+							enemy->x = enemy->x - 1; //смещаем при атаке
+							//Claw.x -= 10;
+						}
+						///////////////////////////////////////////////
 					}
 				}
 				else
 				{
-
+					//flag = 0;
 					enemy->x += enemy->dx*time;
 					enemy->anim.set("run");
 					enemy->dir_attack = false;
