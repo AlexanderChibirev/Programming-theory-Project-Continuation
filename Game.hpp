@@ -7,9 +7,9 @@
 #include "Entity.hpp"
 #include "Player.hpp"
 #include "Enemy.hpp"
-#include "MovingPlatform.hpp"
+//#include "MovingPlatform.h"
 #include "levelObjects.hpp"
-
+#include "LifeBar.h"
 
 using namespace sf;
 
@@ -50,7 +50,7 @@ void RunGame(RenderWindow &window)
 	enemy_anim.create("hit_on_hero", enemy_t, 0, 880, 137, 144, 4, 0.004, 144);
 	enemy_anim.create("run", enemy_t, 0, 0, 120, 129, 8, 0.005, 120);
 	enemy_anim.create("dead", enemy_t, 0, 720, 112, 112, 7, 0.005, 112);
-	enemy_anim.create("attack", enemy_t, 0, 264, 168, 128, 5, 0.009, 168);
+	enemy_anim.create("attack", enemy_t, 0, 264, 168, 128, 5, 0.005, 168);
 
 	AnimationManager level1_Objects;//загрузка фоновых движущихся объектов
 	level1_Objects.create("move", level1_Objects_t, 0, 728, 56, 128, 4, 0.005, 56);
@@ -97,23 +97,25 @@ void RunGame(RenderWindow &window)
 	for (int i = 0; i < e.size(); i++)
 		entities.push_back(new levelObjects(coin, lvl, e[i].rect.left, e[i].rect.top, "coin"));
 
-	e = lvl.GetObjects("movingPlatformX");
+	/*e = lvl.GetObjects("movingPlatformX");
 	for (int i = 0; i < e.size(); i++)
 		entities.push_back(new MovingPlatform(move_platform_x_y, lvl, e[i].rect.left, e[i].rect.top, "movingPlatformX"));
 
 	e = lvl.GetObjects("movingPlatformY");
 	for (int i = 0; i < e.size(); i++)
 		entities.push_back(new MovingPlatform(move_platform_x_y, lvl, e[i].rect.left, e[i].rect.top, "movingPlatformY"));
-
+*/
 	Object pl = lvl.GetObject("player");
 	PLAYER Claw(hero_anim, lvl, float(pl.rect.left), float(pl.rect.top));
 	Clock clock;
 	double CurrentFrame = 0;
 	bool dir = false;
+	LifeBar lifeBarPlayer;
+
 	/////////////////// основной цикл (код) /////////////////////
 	while (window.isOpen())
 	{
-		
+		lifeBarPlayer.update(int(Claw.Health));
 		sf::Int64 time = clock.getElapsedTime().asMicroseconds();
 		clock.restart();
 
@@ -249,8 +251,8 @@ void RunGame(RenderWindow &window)
 
 		for(it=entities.begin();it!=entities.end();it++)
 			(*it)->draw(window);
-
 		Claw.draw(window);
+		lifeBarPlayer.draw(window);
 		window.display();
 
 	}

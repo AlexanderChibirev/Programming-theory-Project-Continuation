@@ -1,10 +1,10 @@
-#include "source\Game.hpp"
-#include "source\menu.h"
+#include "Game.hpp"
+#include "menu.h"
 
 int main()
 {
 	RenderWindow window(VideoMode(750, 550), "Claw");
-	menu(window);
+	//menu(window);
 	RunGame(window);
 	return 0;
 }

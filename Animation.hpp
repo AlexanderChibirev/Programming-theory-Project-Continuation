@@ -1,5 +1,5 @@
 #pragma once
-#include "TinyXML/tinyxml.h"
+#include "tinyxml.h"
 #include <SFML/Graphics.hpp>
 
 

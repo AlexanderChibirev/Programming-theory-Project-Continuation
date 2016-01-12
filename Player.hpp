@@ -98,25 +98,27 @@ public:
 			break;
 		default:
 			break;
-		}
+		}  //если сидит больше 3ех сек то встает и не может сесть 3 секунды
 		if (STATE == run) anim.set("run");
 		if (STATE == jump) { anim.set("jump"); }
 		if (STATE == sit_down) anim.set("sit_down");
 		if (STATE == climb) { anim.set("climb"); anim.pause(); if (dy != 0) anim.play(); }
-		if (STATE == dead_spike) { 
-			timer += time;
-			if (timer < 1000) anim.play();
+		if (STATE == dead_spike) {
+			timer_end += time;
+			if (timer_end < 1000) anim.play();
 			else anim.pause();
-			anim.set("dead_spike"); 
+			anim.set("dead_spike");
 			dy = 0; dx = 0;
-			Health = 0; }
+			Health -= 1;
+		}
 		if (STATE == ends_of_the_earth) {
 			timer += time;
 			if (dir){
 			x = x - 0,9999;
 			}
 			if (timer > 5000) { if (dir) { dx = -2;  timer = 0; STATE = fall; } else { dx = 2;  timer = 0; STATE = fall; } }
-			anim.set("ends_of_the_earth");  }
+			anim.set("ends_of_the_earth");
+		}
 		if (shoot && STATE != dead_spike) {
 			dx = 0;
 			anim.set("fist_fight");
