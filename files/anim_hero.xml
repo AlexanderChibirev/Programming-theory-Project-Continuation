@@ -56,12 +56,12 @@
   <cut w="113" x="761" y="2634" h="70" row="1" col="1"/>
   <cut w="99" x="884" y="2658" h="44" row="1" col="1"/>
  </animation>
- <animation title="sit_down" delay="100">
-  <cut w="131" x="0" y="743" h="98" row="1" col="1"/>
-  <cut w="131" x="157" y="743" h="98" row="1" col="1"/>
-  <cut w="131" x="312" y="744" h="98" row="1" col="1"/>
-  <cut w="131" x="486" y="742" h="98" row="1" col="1"/>
-  <cut w="131" x="640" y="742.5" h="98" row="1" col="1"/>
+ <animation title="sit_down" delay="500">
+ <cut w="128" x="309" y="746" h="98" row="1" col="1"/>
+  <cut w="128" x="487" y="744" h="98" row="1" col="1"/>
+   <cut w="128" x="157" y="745" h="98" row="1" col="1"/>
+  <cut w="128" x="642" y="744" h="98" row="1" col="1"/>
+
  </animation>
  
  <animation title="hit_sword" delay="200">

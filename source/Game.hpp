@@ -50,7 +50,7 @@ void RunGame(RenderWindow &window)
 	enemy_anim.create("hit_on_hero", enemy_t, 0, 880, 137, 144, 4, 0.004, 144);
 	enemy_anim.create("run", enemy_t, 0, 0, 120, 129, 8, 0.005, 120);
 	enemy_anim.create("dead", enemy_t, 0, 720, 112, 112, 7, 0.005, 112);
-	enemy_anim.create("attack", enemy_t, 0, 264, 168, 128, 5, 0.008, 168);
+	enemy_anim.create("attack", enemy_t, 0, 264, 168, 128, 5, 0.009, 168);
 
 	AnimationManager level1_Objects;//загрузка фоновых движущихся объектов
 	level1_Objects.create("move", level1_Objects_t, 0, 728, 56, 128, 4, 0.005, 56);
@@ -128,7 +128,7 @@ void RunGame(RenderWindow &window)
 		//передвижение
 		if (Keyboard::isKeyPressed(Keyboard::Left)) { Claw.key["L"] = true; }
 		if (Keyboard::isKeyPressed(Keyboard::Right)) { Claw.key["R"] = true; }
-		if (Keyboard::isKeyPressed(Keyboard::Down)) { Claw.key["climb_down"] = true;}
+		if (Keyboard::isKeyPressed(Keyboard::Down)) { Claw.key["climb_down"] = true; Claw.hit_on_enemy = false;}
 		//прыжок
 		if (Keyboard::isKeyPressed(Keyboard::Space)) { Claw.key["jump"] = true;}
 		//по лестнице
@@ -176,6 +176,7 @@ void RunGame(RenderWindow &window)
 						}
 			}
 			//3.. и т.д.
+			//FloatRect(enemy.sprite.getGlobalBounds().left, .top, .width, .heigth).intersects(obj[i].rect)
 			if ((*it)->Name == "easyEnemy")
 			{
 				//if (Claw.dir) Claw.x += 10; else Claw.x -= 10; при ударе отскок
@@ -185,45 +186,40 @@ void RunGame(RenderWindow &window)
 
 				if (enemy->Health <= 0) { continue;} //для прекращения вызова анимации(удар от врага)
 				if (Claw.getRect().intersects(enemy->getRect())) {
-					if (Claw.shoot) { enemy->claw_shoot = true;/* enemy->dx = 0;*/ enemy->Health -= 0.25; }
+					if (Claw.dx > 0 || Claw.dx < 0) { Claw.Health -= float(0.5); }
+					if (Claw.dy > 0 || Claw.dy < 0) { Claw.Health -= float(0.5); }
+					if (Claw.shoot) { enemy->claw_shoot = true; enemy->Health -= 0.25;}
 					else if (!Claw.hit_on_enemy) {
 
 						enemy->attack_start = true;
-						if (enemy->attack_start) { Claw.hit_on_enemy = true; }
+						if (enemy->attack_start) { Claw.hit_on_enemy = true; Claw.Health -= float(0.1); }
 						//////////////////////////////////////////////////////
 						if (Claw.dir == 1 && enemy->dir == 1 /*&& flag == 0*/) {
 							enemy->dir = 1; //если враг смотрит влево и враг смотрит влево, то враг атакует влево
-							cout << "1";
+							//cout << "1";
 							flag = 1;
-							enemy->x = enemy->x - 1; //смещаем при атаке
+							enemy->x = enemy->x - 3; //смещаем при атаке
 							//Claw.x += 10;
 						}
 						else if (Claw.dir == 0 && enemy->dir == 0 /*&& flag == 0*/) {
 							enemy->dir = 0; //если персонаж смотрит вправо и враг смотрит вправо, то он бьет его вправо
-							cout << "2";
+							//cout << "2";
 							flag = 1;
-							enemy->x = enemy->x + 1; //смещаем при атаке
+							enemy->x = enemy->x + 3; //смещаем при атаке
 							//Claw.x -= 10;
 						}
-						//else if (Claw.dir == 0 && enemy->dir == 0 && enemy->dx < 0 /*&& flag == 0*/) {
-						//	enemy->dir = 1; //если персонаж смотрит вправо и враг смотрит вправо, то он бьет его вправо
-						//	cout << "2";
-						//	flag = 1;
-						//	enemy->x = enemy->x + 1; //смещаем при атаке
-						//							 //Claw.x -= 10;
-						//}
 						else if (Claw.dir == 1 && enemy->dir == 0 /*&& flag == 0*/) {
 							enemy->dir = 0; //если перс смотрит влево, а враг вправо, то враг бьет вправо
-							cout << "3";
+							//cout << "3";
 							flag = 1;
-							enemy->x = enemy->x + 1; //смещаем при атаке
+							enemy->x = enemy->x + 3; //смещаем при атаке
 							//Claw.x -= 10;
 						}
 						else if (Claw.dir == 0 && enemy->dir == 1 /*&& flag == 0*/) {
 							enemy->dir = 1; //если перс смотрит вправо, а враг влево, то бьет враг влево
-							cout << "4";
+							//cout << "4";
 							flag = 1;
-							enemy->x = enemy->x - 1; //смещаем при атаке
+							enemy->x = enemy->x - 3; //смещаем при атаке
 							//Claw.x -= 10;
 						}
 						///////////////////////////////////////////////

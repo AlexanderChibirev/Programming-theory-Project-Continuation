@@ -39,14 +39,17 @@ void menu(RenderWindow & window) {
 		menuNum = 0;
 		window.clear(Color(129, 181, 221));
 
-		if (IntRect(0, 0, 350, 95).contains(Mouse::getPosition(window))) { menu1.setColor(Color::Yellow); menuNum = 1; }
-		if (IntRect(0, 100, 285, 50).contains(Mouse::getPosition(window))) { menu2.setColor(Color::Yellow); menuNum = 2; }
-		if (IntRect(0, 170, 144, 40).contains(Mouse::getPosition(window))) { menu3.setColor(Color::Yellow); menuNum = 3; }
+		if (IntRect(0, 0, 350, 95).contains(Mouse::getPosition(window))) { menu1.setColor(Color::Yellow); menuNum = 1; }//начало игры
+		if (IntRect(0, 100, 285, 50).contains(Mouse::getPosition(window))) { menu2.setColor(Color::Yellow); menuNum = 2; }//о программе
+		if (IntRect(0, 170, 144, 40).contains(Mouse::getPosition(window))) { menu3.setColor(Color::Yellow); menuNum = 3; }//выход из игры
 
 		if (Mouse::isButtonPressed(Mouse::Left))
 		{
 			if (menuNum == 1) isMenu = false;//если нажали первую кнопку, то выходим из меню 
-			if (menuNum == 2) { window.draw(about); window.display(); while (!Keyboard::isKeyPressed(Keyboard::Escape)); }
+			if (menuNum == 2) { 
+				window.draw(about);
+				window.display();
+				while (!Keyboard::isKeyPressed(Keyboard::Escape)); }
 			if (menuNum == 3) { window.close(); isMenu = false; }
 
 		}

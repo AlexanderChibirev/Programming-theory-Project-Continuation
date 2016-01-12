@@ -91,8 +91,6 @@ public:
 	}
 	void Animation(float time) //проход по анимационной xlm
 	{
-		//Clock cloker;
-		//cout << x << "=====" << y;
 		switch (STATE)
 		{
 		case stay:
@@ -124,21 +122,15 @@ public:
 			anim.set("fist_fight");
 			timer += time;
 			if (timer > 600) { shoot = false; timer = 0; }
-			//cout << timer << "\n";
-			/*if (STATE == sit_down) {
-				if (dir == 1) {  }
-				anim.set("hit_sword_down");
-
-			}*/
 			}
 		if (hit_on_enemy && STATE!= dead_spike && shoot == false && STATE != sit_down) {
 			timer += time;
-			dx = 0;
 			hit_on_enemy = false;
-			if (timer > 500) { 
-				cout << "HERO_HP = " << Health << "\n";
-				Health -= 5;				
+			/////
+			if (timer > 50) { 
+				cout << "HERO_HP = " << int(Health) << "\n";				
 				timer = 0;}
+			/////
 			anim.set("hit_on_enemy");//ударяет враг
 		}
 		if (dy > 0 && STATE != climb && (STATE != dead_spike) ) { anim.set("fall");}//падаение
@@ -177,16 +169,21 @@ public:
 					if (dx > 0 && num == 0) { x = obj[i].rect.left - w; }
 					if (dx < 0 && num == 0) { x = obj[i].rect.left + obj[i].rect.width; }
 				}
+				if (obj[i].name == "solidRight")
+				{
+					if (dx == 0 && num == 0) { x = obj[i].rect.left - w; }
+				}
+
+				if (obj[i].name == "solidLeft")
+				{
+					if (dx == 0 && num == 0) { x = obj[i].rect.left - w; }
+				}
 
 				if (obj[i].name == "ladder") {
 					onLadder = true;
 					if (STATE == climb) x = obj[i].rect.left - 10;
 				}
-				/*if ((int(x) == 1920)||(int(x) == 1919)||(int(x) == 1918) || (int(x) == 1917)|| (int(x) == 1916)|| (int(x) == 1915)|| (int(x) == 1914)|| (int(x) == 1913)) {
-				или лучше так 1913 < int(x) < 1920.....
-				cout<<int(x);
-				STATE = ends_of_the_earth;
-				}*/
+
 				if (obj[i].name == "ends_of_the_earth_r" && (dx == 0) && (dy == 0) && (dir != 1)) {
 					STATE = ends_of_the_earth;
 				}
@@ -198,10 +195,6 @@ public:
 				if (obj[i].name == "spikes") {
 					STATE = dead_spike;
 				}
-				if (obj[i].name == "easyEnemy") {
-					//cout << "hello";
-				}
-
 			}
 	}
 

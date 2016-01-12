@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="90" tilewidth="32" tileheight="32" nextobjectid="233">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="90" tilewidth="32" tileheight="32" nextobjectid="258">
  <tileset firstgid="1" name="Level1-Tiles1New" tilewidth="32" tileheight="32" tilecount="660">
   <image source="images/Level1-Tiles1New.png" width="715" height="974"/>
  </tileset>
@@ -8,7 +8,7 @@
   <object id="34" name="solid" x="256.5" y="1626" width="29.5" height="670"/>
   <object id="67" name="solid" x="1783" y="2147.33" width="158.333" height="79.3333"/>
   <object id="68" name="solid" x="2567.33" y="2148" width="176.667" height="85"/>
-  <object id="69" name="solid" x="2157" y="1835.33" width="405.673" height="1.67"/>
+  <object id="69" name="solid" x="2130.67" y="1832.67" width="432.006" height="28.3333"/>
   <object id="85" name="solid" x="577" y="2277" width="482" height="24"/>
   <object id="90" name="solid" x="575" y="1921" width="488.333" height="24"/>
   <object id="91" name="solid" x="576" y="2020" width="487" height="24"/>
@@ -36,14 +36,24 @@
   <object id="206" name="chain" x="596.5" y="1992.5" width="24" height="72"/>
   <object id="208" name="chain" x="641" y="1992.5" width="24" height="72"/>
   <object id="209" name="dungeon" x="595" y="2176.5" width="113" height="72"/>
-  <object id="214" name="movingPlatformX" x="1481" y="1935" width="92" height="30"/>
-  <object id="215" name="solid_for_enemy" x="1907" y="2103" width="38" height="143"/>
-  <object id="217" name="solid_for_enemy" x="2596" y="2106.5" width="38" height="143"/>
-  <object id="228" name="easyEnemy" x="2050" y="2107" width="168" height="128"/>
-  <object id="229" name="easyEnemy" x="1389" y="2111" width="168" height="128"/>
-  <object id="232" name="player" x="1279" y="2109" width="68" height="120"/>
+  <object id="215" name="solid_for_enemy_R" x="1783" y="2125" width="38" height="143"/>
+  <object id="229" name="easyEnemy" x="1562" y="2113" width="168" height="128"/>
+  <object id="236" name="solidLeft" x="2130" y="1844.67" width="40" height="44"/>
+  <object id="238" name="solidRight" x="2530.33" y="1862.67" width="40" height="44"/>
+  <object id="243" name="solid_for_enemy_L" x="1238" y="2093.5" width="38" height="143"/>
+  <object id="244" name="easyEnemy" x="1318" y="2113" width="168" height="128"/>
+  <object id="245" name="easyEnemy" x="2031" y="2113" width="168" height="128"/>
+  <object id="246" name="solid_for_enemy_L" x="1904" y="2124.5" width="38" height="143"/>
+  <object id="247" name="solid_for_enemy_R" x="2568" y="2097.5" width="38" height="143"/>
+  <object id="248" name="easyEnemy" x="2322" y="2112" width="168" height="128"/>
+  <object id="249" name="player" x="525" y="2153" width="68" height="120"/>
+  <object id="250" name="movingPlatformY" x="1080.33" y="2196" width="89.3333" height="30"/>
+  <object id="254" name="movingPlatformX" x="456" y="2010.5" width="92" height="30"/>
+  <object id="255" name="solidR" x="651" y="2130.5" width="73" height="71"/>
+  <object id="256" name="solidL" x="307.5" y="2139.5" width="73" height="71"/>
+  <object id="257" name="ends_of_the_earth_l" x="519.652" y="2144.77" width="16.6957" height="20.4565"/>
  </objectgroup>
- <layer name="стены2" width="100" height="90">
+ <layer name="стены2" width="100" height="90" visible="0">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -9047,7 +9057,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="задний фон для шипов" width="100" height="90">
+ <layer name="задний фон для шипов" width="100" height="90" visible="0">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -18051,7 +18061,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="простые стены" width="100" height="90">
+ <layer name="простые стены" width="100" height="90" visible="0">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -27055,7 +27065,7 @@
    <tile gid="51"/>
   </data>
  </layer>
- <layer name="шипы" width="100" height="90">
+ <layer name="шипы" width="100" height="90" visible="0">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -36059,7 +36069,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="синие стены" width="100" height="90">
+ <layer name="синие стены" width="100" height="90" visible="0">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -45063,7 +45073,7 @@
    <tile gid="334"/>
   </data>
  </layer>
- <layer name="столбы" width="100" height="90">
+ <layer name="столбы" width="100" height="90" visible="0">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -54067,7 +54077,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="дверь" width="100" height="90">
+ <layer name="дверь" width="100" height="90" visible="0">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -63071,7 +63081,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="окна" width="100" height="90">
+ <layer name="окна" width="100" height="90" visible="0">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -72075,7 +72085,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="тумбочки" width="100" height="90">
+ <layer name="тумбочки" width="100" height="90" visible="0">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -81079,7 +81089,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="вверх столбов" width="100" height="90">
+ <layer name="вверх столбов" width="100" height="90" visible="0">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -90083,7 +90093,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="висящие платформы" width="100" height="90">
+ <layer name="висящие платформы" width="100" height="90" visible="0">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -99087,7 +99097,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="лестница" width="100" height="90">
+ <layer name="лестница" width="100" height="90" visible="0">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>

@@ -19,6 +19,8 @@ public:
 	double currentFrame;	
 	AnimationManager anim;
 	std::vector<Object> obj;
+	std::vector<Object> objL;
+	std::vector<Object> objR;
 	bool life;
 	bool  dir;
 	bool clash = false;
