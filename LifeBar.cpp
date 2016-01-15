@@ -15,11 +15,11 @@ LifeBar::LifeBar()
 }
 
 
-//LifeBar::~LifeBar()
-//{
-//}
+LifeBar::~LifeBar()
+{
+}
 
-void LifeBar::update(int k)// k-текущее здоровье
+void LifeBar::update(float k)// k-текущее здоровье
 
 {
 	if (k>0)

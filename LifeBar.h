@@ -16,8 +16,8 @@ public:
 	int max;
 	RectangleShape bar;
 	LifeBar();
-	//~LifeBar();
-	void update(int);
+	~LifeBar();
+	void update(float);
 	void draw(RenderWindow &window);
 };
 

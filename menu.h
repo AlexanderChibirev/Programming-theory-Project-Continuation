@@ -30,8 +30,8 @@ void menu(RenderWindow & window) {
 		Clock clock;
 		sf::Int64 time = clock.getElapsedTime().asMicroseconds();
 		clock.restart();
-		CurrentFrame += 0.0006*time; //если 21 то 0.0008, если 6, то 0.0001
-		if (CurrentFrame > 6) CurrentFrame -= 6; // либо 21 либо 6
+		CurrentFrame += 0.002*time; //если 21 то 0.0008, если 6, то 0.0001
+		if (CurrentFrame > 21) CurrentFrame -= 21; // либо 21 либо 6
 		menuBg.setTextureRect(IntRect(750* int(CurrentFrame), 0, 750,750)); //
 		menu1.setColor(Color::White);
 		menu2.setColor(Color::White);
